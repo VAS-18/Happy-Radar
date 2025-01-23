@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import ReactConfetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
 
@@ -49,7 +49,7 @@ export default function Home() {
       const imageUrl = URL.createObjectURL(file);
       setSelectedImage(imageUrl);
       setRandomNumber(null);
-    } catch (error) {
+    } catch {
       alert("There was an error uploading your image. Please try again.");
     }
   };
