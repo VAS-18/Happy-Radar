@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useCallback, useEffect, useRef } from "react";
 import ReactConfetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
-import Kursor from 'kursor';
+
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [randomNumber, setRandomNumber] = useState<number | null>(null);
@@ -13,15 +13,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const { width, height } = useWindowSize();
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    // @ts-ignore
-    new Kursor({
-      type: 2,
-      removeDefaultCursor: true,
-      color: 'rgba(255, 105, 180, 0.7)'
-    });
-  }, []);
 
   useEffect(() => {
     let confettiTimer: NodeJS.Timeout;
